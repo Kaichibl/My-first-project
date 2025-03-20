@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-df = pd.read_csv("/workspaces/My-first-project/dataset/trips_data_1000.csv")
+df = pd.read_csv("dataset/trips_data_1000.csv")
 st.write("### Preview of Uploaded Data:")
 st.dataframe(df)
 
