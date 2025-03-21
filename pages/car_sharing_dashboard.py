@@ -14,7 +14,9 @@ trips_merged = trips.merge(cars, on='id', how='left')
 
 trips_merged = trips_merged.merge(cities, on='city_id', how='left')
 
-trips_merged = trips_merged.drop(columns=["id", "city_id", "id","id"])
-
+trips_merged = trips_merged.drop(columns=["car_id", "city_id", "customer_id","id"])
 
 st.dataframe(trips_merged)
+
+
+
