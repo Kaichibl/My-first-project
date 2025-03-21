@@ -10,13 +10,12 @@ def load_data():
 
 trips, cars, cities = load_data()
 
-trips_merged = trips.merge(cars, on='id', how='left')
+trips_merged = trips.merge(cars, left_on='car_id', right_on="id", how="left")
 
 trips_merged = trips_merged.merge(cities, on='city_id', how='left')
 
-trips_merged = trips_merged.drop(columns=["car_id", "city_id", "customer_id","id"])
+trips_merged = trips_merged.drop(columns=["car_id", "city_id", "id","customer_id"], errors="ignore")
+
 
 st.dataframe(trips_merged)
-
-
 
